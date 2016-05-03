@@ -2,17 +2,26 @@ package rs_controllers
 
 import "github.com/ccutch/go-view-controller"
 
+// Generallized json object
+type JSON map[string]interface{}
+
 type ApplicationController struct {
 	*controller.Controller
 }
 
 // Render homepage
 func (this ApplicationController) Home() {
-	this.Data = struct {
-		Title string
-		Name  string
-	}{Title: "HOMEPAGE", Name: "Connor"}
-	this.Render("homepage")
+	this.Data = JSON{
+		"user": "Connor",
+	}
+	err := this.Render("homepage")
+
+	if err != nil {
+		err = this.RenderError("InternalServer", err)
+		if err != nil {
+			panic(err)
+		}
+	}
 }
 
 // Create a new instance of an application controller

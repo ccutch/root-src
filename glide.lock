@@ -1,8 +1,12 @@
-hash: ece1dc79db53365159cc52a0ba90f33ef5447b7ccf0042438de009a5642ecb8f
-updated: 2016-05-01T08:40:17.602167168-07:00
+hash: 952e5adef0231d2512c81e1530d1311440666f23064a14fab8c057e3e4a1ebc8
+updated: 2016-05-02T23:09:24.614872386-07:00
 imports:
+- name: github.com/ccutch/go-view-controller
+  version: 3d75b24f53958d60b712ae4a8d55e5b83986c054
 - name: github.com/gorilla/context
   version: a8d44e7d8e4d532b6a27a02dd82abb31cc1b01bd
 - name: github.com/gorilla/mux
-  version: 0eeaf8392f5b04950925b8a69fe70f110fa7cbfc
+  version: 9c19ed558d5df4da88e2ade9c8940d742aef0e7e
+- name: github.com/kib357/less-go
+  version: afb7b19af594415524030f6dd56a3cfd7b8c8d3c
 devImports: []

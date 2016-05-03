@@ -6,6 +6,7 @@ import (
 	"os"
 
 	"github.com/ccutch/root-src/controllers"
+	"github.com/gorilla/mux"
 )
 
 var (
@@ -15,7 +16,11 @@ var (
 
 func main() {
 	a := rs_controllers.Application()
-	http.Handle("/", a)
+
+	router := mux.NewRouter()
+	router.Handle("/styles/", http.FileServer(http.Dir("/styles")))
+	a.Mount(router)
+	http.Handle("/", router)
 
 	if port == "" {
 		port = "4000"

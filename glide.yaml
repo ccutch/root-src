@@ -1,3 +1,4 @@
 package: .
 import:
 - package: github.com/gorilla/mux
+- package: github.com/kib357/less-go
