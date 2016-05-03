@@ -3,14 +3,24 @@ package main
 import (
 	"fmt"
 	"net/http"
+	"os"
 
 	"github.com/ccutch/root-src/controllers"
+)
+
+var (
+	port = os.Getenv("PORT")
+	host = os.Getenv("HOST")
 )
 
 func main() {
 	a := rs_controllers.Application()
 	http.Handle("/", a)
 
-	fmt.Println("Server listening on port 8080")
-	http.ListenAndServe(":8080", nil)
+	if port == "" {
+		port = "4000"
+	}
+	addr := host + ":" + port
+	fmt.Println("Server listening at", addr)
+	http.ListenAndServe(addr, nil)
 }

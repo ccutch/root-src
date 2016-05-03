@@ -1,4 +1,3 @@
 package: .
 import:
 - package: github.com/gorilla/mux
-- package: github.com/ccutch/go-view-controller

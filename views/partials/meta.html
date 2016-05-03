@@ -1,0 +1,20 @@
+
+<!-- Meta data fields for document -->
+{{define "meta"}}
+  <meta />
+{{end}}
+
+<!-- Document title check for title field or default -->
+{{define "title"}}
+  {{if .Title}}
+  <title>{{.Title}}</title>
+  {{else}}
+  <title>Root-Source ~ A community of Open Source developers</title>
+  {{end}}
+{{end}}
+
+<!-- All head tags -->
+{{define "head"}}
+  {{template "meta"}}
+  {{template "title" .}}
+{{end}}
