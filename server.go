@@ -18,9 +18,10 @@ func main() {
 	a := rs_controllers.Application()
 
 	router := mux.NewRouter()
-	router.Handle("/styles/", http.FileServer(http.Dir("/styles")))
 	a.Mount(router)
+
 	http.Handle("/", router)
+	http.Handle("/styles/", http.StripPrefix("/styles/", http.FileServer(http.Dir("./styles"))))
 
 	if port == "" {
 		port = "4000"

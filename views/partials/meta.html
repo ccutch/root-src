@@ -1,7 +1,14 @@
 
 <!-- Meta data fields for document -->
 {{define "meta"}}
-  <meta />
+{{end}}
+
+
+<!-- styles and javascript dependencies -->
+{{define "imports"}}
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/4.1.1/normalize.min.css" />
+  <link rel="stylesheet" href="/styles/application.css" />
+  <link rel="stylesheet" href="/styles/navbar.css" />
 {{end}}
 
 <!-- Document title check for title field or default -->
@@ -15,6 +22,7 @@
 
 <!-- All head tags -->
 {{define "head"}}
-  {{template "meta"}}
   {{template "title" .}}
+  {{template "meta"}}
+  {{template "imports"}}
 {{end}}
