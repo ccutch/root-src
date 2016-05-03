@@ -1,4 +1,4 @@
-package rs_controllers
+package controllers
 
 import "github.com/ccutch/go-view-controller"
 

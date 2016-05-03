@@ -15,10 +15,12 @@ var (
 )
 
 func main() {
-	a := rs_controllers.Application()
+	a := controllers.Application()
+	u := controllers.User()
 
 	router := mux.NewRouter()
 	a.Mount(router)
+	u.Mount(router)
 
 	http.Handle("/", router)
 	http.Handle("/styles/", http.StripPrefix("/styles/", http.FileServer(http.Dir("./styles"))))
