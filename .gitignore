@@ -25,3 +25,5 @@ _testmain.go
 
 vendor/
 config/keys.yml
+*.swp
+*.swo
